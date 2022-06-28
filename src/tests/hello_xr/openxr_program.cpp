@@ -899,6 +899,8 @@ struct OpenXrProgram : IOpenXrProgram {
             if (RenderLayer(frameState.predictedDisplayTime, projectionLayerViews, layer)) {
                 layers.push_back(reinterpret_cast<XrCompositionLayerBaseHeader*>(&layer));
             }
+        }else{
+            Log::Write(Log::Level::Error,"xrframestate is false!");
         }
 
         XrFrameEndInfo frameEndInfo{XR_TYPE_FRAME_END_INFO};
